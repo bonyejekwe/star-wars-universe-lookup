@@ -11,11 +11,11 @@ p {
 }
 
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'News Gothic', Helvetica, sans-serif;
   --dark1: black;
-  --light1: white;
-  --dark2: darkblue;
-  --light2: lightblue;
+  --light1: rgba(96, 178, 216, 0.808);
+  --dark2: rgba(6, 83, 13, 0.719);
+  --light2: white;
   background-color: var(--light1);
   color: var(--dark1);
 }
@@ -72,6 +72,7 @@ label {
 /* Character page */
 h1#name {
   margin: 50px;
+  padding: 50x;
 }
 
 #generalInfo {
