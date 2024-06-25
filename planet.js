@@ -1,10 +1,16 @@
 let nameH1;
 let charactersDiv;
 let filmsDiv;
+let climateSpan;
+let populationSpan;
+let terrainSpan;
 const baseUrl = `https://swapi2.azurewebsites.net/api`;
 
 addEventListener('DOMContentLoaded', () => {
     nameH1 = document.querySelector('h1#name');
+    climateSpan = document.querySelector('span#climate');
+    populationSpan = document.querySelector('span#pop');
+    terrainSpan = document.querySelector('span#terrain');
     charactersUl = document.querySelector('#characters>ul');
     filmsUl = document.querySelector('#films>ul');
     const sp = new URLSearchParams(window.location.search)
@@ -49,6 +55,9 @@ addEventListener('DOMContentLoaded', () => {
   const renderPlanet = planet => {
     document.title = `SWAPI - ${planet?.name}`;  // Just to make the browser tab say their name
     nameH1.textContent = planet?.name;
+    climateSpan.textContent = planet?.climate;
+    populationSpan.textContent = planet?.population;
+    terrainSpan.textContent = planet?.terrain;
     const cLis = planet?.characters?.map(character => `<li><a href="/character.html?id=${character.id}">${character.name}</li>`)
     const filmsLis = planet?.films?.map(film => `<li><a href="/film.html?id=${film.id}">${film.title}</li>`)
     charactersUl.innerHTML = cLis.join("");
